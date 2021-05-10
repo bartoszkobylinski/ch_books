@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +21,13 @@
                 {% for book in books%}
                 <div class="book">
                     <div class="book__cover">
-                        {{ book.cover }}
+                        <img src="{{ book.cover.url }}" alt="image_cover">
                     </div>
                     <div class="book-title">
-                        {{ book.title }}
+                        <h4>{{ book.title }}</h4>
                     </div>
                     <div class="book-author">
-                        {{ book.author }}
+                        <h2>{{ book.author }}</h2>
                     </div>
                 </div>
                 {% endfor %}
