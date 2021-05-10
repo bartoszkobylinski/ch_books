@@ -7,12 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-
-    {% csrf_token %}
-
-    {{ ch_room_f }}
-    
-    {{ book_f }}
-    
+    <nav>
+        <h2>Ksiazki o ktorych wspominamy przy okazji rozmow na Clubhouse</h2>
+    </nav>
+    <main>
+        <div class="book-list-wrapper">
+            {% for room in rooms%}
+            <div class="clubhouse-room">
+                {{ room }}
+            </div>
+            <div class="book-list">
+                {% for book in books%}
+                <div class="book">
+                    <div class="book__cover">
+                        {{ book.cover }}
+                    </div>
+                    <div class="book-title">
+                        {{ book.title }}
+                    </div>
+                    <div class="book-author">
+                        {{ book.author }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </main>
 </body>
 </html>
