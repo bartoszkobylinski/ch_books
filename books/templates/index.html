@@ -8,46 +8,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/aef6646358.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
     <nav>
-        <h2>Ksiazki o ktorych wspominamy przy okazji rozmow na Clubhouse</h2>
+        <h2>Książki, o których wspominamy przy okazji rozmów na Clubhouse</h2>
     </nav>
     <main>
-        <div class="book-list-wrapper">
-            {% for room in rooms%}
-            <div class="clubhouse-room">
-                {{ room }}
-            </div>
-            <div class="book-list">
-                {% for book in books%}
-                <div class="book">
-                    <div class="book__cover">
-                        <img src="{{ book.cover.url }}" alt="image_cover">
-                    </div>
-                    <div class="book-title">
-                        <h4>{{ book.title }}</h4>
-                    </div>
-                    <div class="book-author">
-                        <h2>{{ book.author }}</h2>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            {% endfor %}
+        <div class="book-table">
+            <table>
+                <thead>
+                    <th>Pokój</th>
+                    <th>Autor</th>
+                    <th>Tytuł</th>
+                    <th>Okładka</th>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{book.room}}</td>
+                            <td>{{book.author}}</td>
+                            <td>{{book.title}}</td>
+                            <td>
+                                <img src="{{book.cover.url}}" alt="image">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        <div class="book-list-select">
-            <select name="rooms" id="">
-                {% for room in rooms %}
-                <option value="{{ room }}">{{ room }}</option>
-                <p>room.book</p>
-                {% endfor %}
-            </select>
-            <div class="books-wrapper">
-                {% for book in books %}
-                {% endfor %}
-            </div>
+        <div class="contact">
+            <p>Jeśli chcesz dodać jakąś książkę to tu możesz się ze mną skontaktować</p>
+            <a href="https://www.instagram.com/icantcoding/"><i class="fab fa-instagram"></i></a>
         </div>
     </main>
 </body>

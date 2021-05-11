@@ -5,7 +5,7 @@ class ClubHouseRoom(models.Model):
     room_name = models.CharField(max_length=150)
 
     def __str__(self):
-        return f"Clubhouse {self.room_name}"
+        return f"{self.room_name}"
 
 
 class Book(models.Model):
