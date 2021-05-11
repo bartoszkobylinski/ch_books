@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class ClubHouseRoom(models.Model):
     room_name = models.CharField(max_length=150)
 
@@ -8,7 +9,8 @@ class ClubHouseRoom(models.Model):
 
 
 class Book(models.Model):
-    club_house_room = models.ForeignKey(ClubHouseRoom, on_delete=models.CASCADE)
+    room = models.ForeignKey(
+        ClubHouseRoom, on_delete=models.CASCADE)
     author = models.CharField(max_length=150)
     title = models.CharField(max_length=150)
     cover = models.FileField(upload_to='covers/')

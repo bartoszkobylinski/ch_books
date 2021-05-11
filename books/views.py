@@ -9,9 +9,23 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['rooms'] = ClubHouseRoom.objects.all()
-        context['books'] = Book.objects.all()
+        rooms = ClubHouseRoom.objects.all()
+        print(type(rooms))
+        for room in rooms:
+            ch_room = {'room': room}
+            print(f'to jest ch_room: {ch_room}')
+            books = Book.objects.filter(**ch_room)
+            for book in books:
+                print(f"to jest book: {book}")
+                print(f"to jest type {type(book)}")
+            # print(f"a to jes queryset books{books}")
+            # print(f"to jest typ {type(books)}")
+            # context[room]
+            
+        # print(f"to jest context {context}")
+        # context['books'] = Book.objects.all()
         return context
+
 
 
 
