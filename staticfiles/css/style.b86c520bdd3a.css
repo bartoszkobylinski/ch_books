@@ -1,0 +1,61 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: #F2EFE4;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+nav{
+    text-align: center;
+    padding: 0.2rem;
+    margin: 3rem 0rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-self: center;
+}
+.book-table{
+    display: flex;
+    justify-content: center;
+}
+th,td{
+    padding: 0.2rem;
+    text-align: center;
+}
+img{
+    width: 3.75rem;
+}
+.contact{
+    text-align: center;
+    margin: 3rem 0rem;
+}
+.contact a{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media only screen and (min-width: 359px){
+    body{
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width: 600px) {
+    body{
+        font-size: 1.25rem;
+    }
+    img{
+        width: 5rem;
+    }
+    th,td{
+        padding: 0.5rem;
+        margin: 0.3rem;
+    }
+  }
+  @media only screen and (min-width: 1023px){
+      img{
+          width: 7.5rem;
+      }
+  }
