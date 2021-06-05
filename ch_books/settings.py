@@ -14,6 +14,7 @@ from pathlib import Path
 import environ
 import os
 
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -30,7 +31,7 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['still-fjord-39299.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
