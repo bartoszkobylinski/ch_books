@@ -1,1 +1,1 @@
-web: gunicorn ch_books.wsgi --log-file -
+web: python manage.py collectstatic --no-input; gunicorn ch_books.wsgi --log-file -
